@@ -28,8 +28,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.google.gson.Gson;
-import com.pack.gascostcalculator.databinding.ActivityCarSelectionBinding;
-import com.pack.gascostcalculator.databinding.ActivityMainBinding;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -74,23 +72,25 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
+        /*
         Button button = findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 goToCarSelection();
             }
-        });
+        });*/
 
 
 
     }
 
-    private void goToCarSelection() {
+    /*
+    /private void goToCarSelection() {
         Intent intent = new Intent(MainActivity.this, CarSelectionActivity.class);
         startActivity(intent);
     }
+    */
 
     private void fetchGasPrices(String stateCode) {
         // The API endpoint (update with the correct URL from Collect API documentation)
