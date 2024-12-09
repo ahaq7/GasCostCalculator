@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">GasCostCalculator</string>
+    <string name="title">Gas Calculator</string>
+    <string name="enter_mpg">Enter MPG</string>
+    <string name="answer">TextView</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
