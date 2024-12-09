@@ -34,6 +34,8 @@ import com.pack.gascostcalculator.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
+
+    //wow this is ali's macbook code
     private EditText MPG;
     private EditText GasPrice;
     private EditText MilesDriven;
