@@ -7,7 +7,8 @@
     android:layout_height="match_parent"
     android:layout_centerHorizontal="true"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/darkbluebackground">
 
     <TextView
         android:id="@+id/title"
@@ -28,6 +29,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/white"
         android:text="Enter MPG"
         app:layout_constraintBottom_toTopOf="@+id/mPG"
         app:layout_constraintStart_toStartOf="@+id/mPG" />
@@ -37,13 +39,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:textSize="40sp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="28dp"
+        android:backgroundTint="@color/white"
         android:layout_marginEnd="24dp"
         android:ems="10"
         android:inputType="number|numberDecimal"
+        android:shadowColor="#F4F3F3"
+        android:textColor="@color/white"
+        android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title" />
 
@@ -55,6 +61,8 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/white"
         android:textSize="40sp"
         android:ems="10"
         android:inputType="number|numberDecimal"
@@ -70,6 +78,8 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/white"
         android:textSize="40sp"
         android:layout_marginEnd="24dp"
         android:ems="10"
@@ -117,6 +127,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:textColor="@color/white"
         android:text="Enter Gas Price"
         app:layout_constraintBottom_toTopOf="@+id/gasPrice"
         app:layout_constraintStart_toStartOf="@+id/gasPrice" />
@@ -125,8 +136,25 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/white"
         android:text="Enter Miles Driven"
         app:layout_constraintBottom_toTopOf="@+id/milesDriven"
         app:layout_constraintStart_toStartOf="@+id/milesDriven" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="$"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toStartOf="@+id/gasPrice"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="228dp" />
+
+    <com.example.swipebutton_library.SwipeButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -37,6 +37,7 @@ android {
     }
 }
 
+
 dependencies {
 
     implementation(libs.appcompat)
@@ -46,7 +47,9 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+    implementation(libs.volley)
+    implementation(libs.gson)
+    implementation("com.github.mhdmoh:swipe-button:1.0.3")
 
-    implementation("com.android.volley:volley:1.2.1")
-    implementation("com.google.code.gson:gson:2.10.1")
+
 }
