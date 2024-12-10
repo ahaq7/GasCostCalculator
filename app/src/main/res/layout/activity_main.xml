@@ -61,11 +61,11 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
-        android:textColor="@color/white"
         android:backgroundTint="@color/white"
-        android:textSize="40sp"
         android:ems="10"
         android:inputType="number|numberDecimal"
+        android:textColor="@color/white"
+        android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -94,10 +94,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="76dp"
         android:text="submit"
-        app:layout_constraintTop_toBottomOf="@+id/milesDriven"
-        tools:layout_editor_absoluteX="137dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/milesDriven" />
 
     <TextView
         android:id="@+id/answer"
@@ -141,20 +142,34 @@
         app:layout_constraintBottom_toTopOf="@+id/milesDriven"
         app:layout_constraintStart_toStartOf="@+id/milesDriven" />
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:text="$"
-        android:textSize="40sp"
-        app:layout_constraintEnd_toStartOf="@+id/gasPrice"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="228dp" />
 
     <com.example.swipebutton_library.SwipeButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/swipe_btn_1"
+        android:layout_width="346dp"
+        android:layout_height="43dp"
+        android:layout_margin="8dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="50dp"
+        app:button_background_padding="12dp"
+        app:button_background_src="@drawable/baseline_arrow_forward_24"
+        app:button_background_tint="@color/purple_500"
+        app:button_height="40dp"
+        app:button_width="40dp"
+        app:has_active_status="true"
+        app:has_finish_animation="true"
+        app:inner_text="Swipe"
+        app:inner_text_color="@color/black"
+        app:inner_text_gravity="end"
+        app:inner_text_padding="8dp"
+        app:inner_text_size="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/milesDriven"
+        app:outer_background_height="40dp"
+        app:outer_background_tint="@color/white"
+        app:trail_background_tint="@color/purple_500"
+        app:trail_enabled="true" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

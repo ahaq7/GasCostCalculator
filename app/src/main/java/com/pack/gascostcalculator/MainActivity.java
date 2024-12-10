@@ -27,6 +27,8 @@ import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.example.swipebutton_library.OnActiveListener;
+import com.example.swipebutton_library.SwipeButton;
 import com.google.gson.Gson;
 
 
@@ -54,10 +56,10 @@ public class MainActivity extends AppCompatActivity {
         answer = findViewById(R.id.answer);
 
 
-        Button submitButton = findViewById(R.id.submit);
-        submitButton.setOnClickListener(new View.OnClickListener() {
+        SwipeButton swipeButton = findViewById(R.id.swipe_btn_1);
+        swipeButton.setOnActiveListener(new OnActiveListener() {
             @Override
-            public void onClick(View v) {
+            public void onActive() {
                 double mPG = Double.parseDouble(MPG.getText().toString());
                 double gasPrice = Double.parseDouble(GasPrice.getText().toString());
                 double milesDriven = Double.parseDouble(MilesDriven.getText().toString());
@@ -71,6 +73,14 @@ public class MainActivity extends AppCompatActivity {
                 String cost = formatter.format(gasCost);
                 answer.setText("Balance Due: " + cost);
 
+
+            }
+        });
+
+        Button submitButton = findViewById(R.id.submit);
+        submitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
             }
         });
