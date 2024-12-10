@@ -83,13 +83,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
         android:gravity="center"
         android:text="@string/answer"
         android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/mPG"
         app:layout_constraintEnd_toEndOf="@+id/title"
         app:layout_constraintHorizontal_bias="0.546"
-        app:layout_constraintStart_toStartOf="@+id/title"
-        tools:layout_editor_absoluteY="246dp" />
+        app:layout_constraintStart_toStartOf="@+id/title" />
 
     <Button
         android:id="@+id/button"
