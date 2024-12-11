@@ -14,16 +14,14 @@
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="73dp"
-        android:layout_marginBottom="24dp"
         android:gravity="center_horizontal"
+        android:textColor="@color/white"
         android:text="@string/title"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/answer"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.041" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView"
@@ -78,6 +76,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
+
         android:backgroundTint="@color/white"
         android:textColor="@color/white"
         android:textSize="40sp"
@@ -89,47 +88,25 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mPG" />
 
-    <Button
-        android:id="@+id/submit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="76dp"
-        android:text="submit"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/milesDriven" />
-
     <TextView
         android:id="@+id/answer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:gravity="center"
+        android:layout_marginTop="24dp"
         android:text="@string/answer"
+        android:textColor="@color/white"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="482dp" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginBottom="24dp"
-        android:text="next page"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/submit" />
+        app:layout_constraintTop_toBottomOf="@+id/both_ways_check" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:textColor="@color/white"
+        android:layout_marginStart="11dp"
         android:text="Enter Gas Price"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/gasPrice"
         app:layout_constraintStart_toStartOf="@+id/gasPrice" />
 
@@ -147,16 +124,15 @@
         android:id="@+id/swipe_btn_1"
         android:layout_width="346dp"
         android:layout_height="43dp"
-        android:layout_margin="8dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="50dp"
         app:button_background_padding="12dp"
         app:button_background_src="@drawable/baseline_arrow_forward_24"
         app:button_background_tint="@color/purple_500"
         app:button_height="40dp"
         app:button_width="40dp"
-        app:has_active_status="true"
+        app:has_active_status="false"
         app:has_finish_animation="true"
         app:inner_text="Swipe"
         app:inner_text_color="@color/black"
@@ -165,11 +141,22 @@
         app:inner_text_size="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/milesDriven"
+        app:layout_constraintTop_toBottomOf="@+id/answer"
         app:outer_background_height="40dp"
         app:outer_background_tint="@color/white"
         app:trail_background_tint="@color/purple_500"
         app:trail_enabled="true" />
+
+    <RadioButton
+        android:id="@+id/both_ways_check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:textColor="@color/white"
+        android:layout_marginTop="3dp"
+        android:text="Calculate Both Ways"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/milesDriven" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
