@@ -1,10 +1,12 @@
 package com.pack.gascostcalculator;
 
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowInsets;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
@@ -55,7 +57,9 @@ public class MainActivity extends AppCompatActivity {
         MilesDriven = findViewById(R.id.milesDriven);
         answer = findViewById(R.id.answer);
 
-        swipeButtonFunction();
+
+        ButtonCalculate();
+        ResetButton();
 
         /*
         Button button = findViewById(R.id.button);
@@ -86,22 +90,25 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void swipeButtonFunction() {
-        SwipeButton swipeButton = findViewById(R.id.swipe_btn_1);
-        swipeButton.setOnActiveListener(new OnActiveListener() {
+    private void ButtonCalculate() {
+        Button button = findViewById(R.id.calculate_btn);
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onActive() {
+            public void onClick(View v) {
+                double mPG = 0;
+                double gasPrice = 0;
+                double milesDriven = 0;
 
-                double mPG = Double.parseDouble(MPG.getText().toString());
-                double gasPrice = Double.parseDouble(GasPrice.getText().toString());
-                double milesDriven = Double.parseDouble(MilesDriven.getText().toString());
+                mPG = Double.parseDouble(MPG.getText().toString());
+                gasPrice = Double.parseDouble(GasPrice.getText().toString());
+                milesDriven = Double.parseDouble(MilesDriven.getText().toString());
 
                 fetchGasPrices("IL");
 
                 double gasCost = ((double) milesDriven / mPG) * gasPrice;
 
                 RadioButton radioButton = findViewById(R.id.both_ways_check);
-                if(radioButton.isChecked()){
+                if (radioButton.isChecked()) {
                     gasCost = gasCost * 2;
                 }
 
@@ -109,10 +116,24 @@ public class MainActivity extends AppCompatActivity {
                 String cost = formatter.format(gasCost);
                 answer.setText("Balance Due: " + cost);
 
-
             }
         });
     }
+
+    private void ResetButton(){
+        Button buttonReset = findViewById(R.id.reset_btn);
+        buttonReset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MPG.setText("");
+                GasPrice.setText("");
+                MilesDriven.setText("");
+                answer.setText("");
+            }
+        });
+
+    }
+
 
     /*
     /private void goToCarSelection() {

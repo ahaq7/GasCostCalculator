@@ -49,6 +49,7 @@ dependencies {
     androidTestImplementation(libs.espresso.core)
     implementation(libs.volley)
     implementation(libs.gson)
+    implementation(libs.material.v190)
     implementation("com.github.mhdmoh:swipe-button:1.0.3")
 
 
