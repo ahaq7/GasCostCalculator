@@ -1,19 +1,20 @@
 package com.pack.gascostcalculator;
 
 
-import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
-import android.widget.Button;
+import android.view.WindowInsets;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -29,7 +30,6 @@ import java.util.Map;
 
 import com.example.swipebutton_library.OnActiveListener;
 import com.example.swipebutton_library.SwipeButton;
-import com.google.gson.Gson;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -48,42 +48,15 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
+        naviBarMarginsSet();
 
         MPG = findViewById(R.id.mPG);
         GasPrice = findViewById(R.id.gasPrice);
         MilesDriven = findViewById(R.id.milesDriven);
-
         answer = findViewById(R.id.answer);
 
+        swipeButtonFunction();
 
-        SwipeButton swipeButton = findViewById(R.id.swipe_btn_1);
-        swipeButton.setOnActiveListener(new OnActiveListener() {
-            @Override
-            public void onActive() {
-                double mPG = Double.parseDouble(MPG.getText().toString());
-                double gasPrice = Double.parseDouble(GasPrice.getText().toString());
-                double milesDriven = Double.parseDouble(MilesDriven.getText().toString());
-
-                fetchGasPrices("IL");
-
-                double gasCost = ((double) milesDriven / mPG) * gasPrice;
-                gasCost = gasCost * 2;
-
-                DecimalFormat formatter = new DecimalFormat("$###.##");
-                String cost = formatter.format(gasCost);
-                answer.setText("Balance Due: " + cost);
-
-
-            }
-        });
-
-        Button submitButton = findViewById(R.id.submit);
-        submitButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
         /*
         Button button = findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
@@ -92,9 +65,53 @@ public class MainActivity extends AppCompatActivity {
                 goToCarSelection();
             }
         });*/
+    }
+
+    private void naviBarMarginsSet() {
+        View decorView = getWindow().getDecorView();
+
+        decorView.setOnApplyWindowInsetsListener(new View.OnApplyWindowInsetsListener(){
+            @NonNull
+            @Override
+            public WindowInsets onApplyWindowInsets(@NonNull View v, @NonNull WindowInsets insets) {
+                int left = insets.getSystemWindowInsetLeft();
+                int top = insets.getSystemWindowInsetTop();
+                int right = insets.getSystemWindowInsetRight();
+                int bottom = insets.getSystemWindowInsetBottom();
+
+                v.setPadding(left,top,right,bottom);
+
+                return insets.consumeSystemWindowInsets();
+            }
+        });
+    }
+
+    private void swipeButtonFunction() {
+        SwipeButton swipeButton = findViewById(R.id.swipe_btn_1);
+        swipeButton.setOnActiveListener(new OnActiveListener() {
+            @Override
+            public void onActive() {
+
+                double mPG = Double.parseDouble(MPG.getText().toString());
+                double gasPrice = Double.parseDouble(GasPrice.getText().toString());
+                double milesDriven = Double.parseDouble(MilesDriven.getText().toString());
+
+                fetchGasPrices("IL");
+
+                double gasCost = ((double) milesDriven / mPG) * gasPrice;
+
+                RadioButton radioButton = findViewById(R.id.both_ways_check);
+                if(radioButton.isChecked()){
+                    gasCost = gasCost * 2;
+                }
+
+                DecimalFormat formatter = new DecimalFormat("$###.##");
+                String cost = formatter.format(gasCost);
+                answer.setText("Balance Due: " + cost);
 
 
-
+            }
+        });
     }
 
     /*
