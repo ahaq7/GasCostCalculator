@@ -162,7 +162,7 @@
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:text="@string/answer"
-            android:background="@drawable/btn"
+            android:backgroundTint="@color/gray"
             android:textSize="30sp" />
     </LinearLayout>
 
