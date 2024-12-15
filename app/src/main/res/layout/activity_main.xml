@@ -121,9 +121,10 @@
         app:layout_constraintTop_toBottomOf="@+id/milesDriven" />
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
-        android:background="@drawable/buttonwhite"
         android:layout_height="wrap_content"
+        android:background="@drawable/buttonwhite"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -135,16 +136,16 @@
             android:orientation="horizontal">
 
             <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/calculate_btn"
+                android:id="@+id/calculate_btn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="13dp"
-                android:background="@drawable/buttonwhite"
                 android:layout_weight="1"
+                android:background="@drawable/buttonwhite"
                 android:text="Calculate" />
 
             <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/reset_btn"
+                android:id="@+id/reset_btn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="13dp"
@@ -157,14 +158,24 @@
 
         <TextView
             android:id="@+id/answer"
-            android:layout_margin="13dp"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:text="@string/answer"
+            android:layout_margin="13dp"
             android:backgroundTint="@color/gray"
+            android:text="@string/answer"
             android:textSize="30sp" />
     </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:srcCompat="@drawable/baseline_arrow_forward_24" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
