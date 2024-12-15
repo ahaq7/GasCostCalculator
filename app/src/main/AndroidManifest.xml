@@ -17,6 +17,9 @@
         android:theme="@style/Theme.GasCostCalculator"
         tools:targetApi="31">
         <activity
+            android:name=".Calculator"
+            android:exported="false" />
+        <activity
             android:name=".CarSelection"
             android:exported="false" />
         <activity
