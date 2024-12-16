@@ -51,6 +51,7 @@ dependencies {
     implementation(libs.gson)
     implementation(libs.material.v190)
     implementation("com.github.mhdmoh:swipe-button:1.0.3")
+    implementation("com.google.android.material:material:1.1.0")
 
 
 }
