@@ -92,11 +92,10 @@ public class Calculator extends AppCompatActivity {
                 double gasPrice = 0;
                 double milesDriven = 0;
 
+
                 mPG = Double.parseDouble(MPG.getText().toString());
                 gasPrice = Double.parseDouble(GasPrice.getText().toString());
                 milesDriven = Double.parseDouble(MilesDriven.getText().toString());
-
-                fetchGasPrices("IL");
 
                 double gasCost = ((double) milesDriven / mPG) * gasPrice;
 
@@ -127,59 +126,8 @@ public class Calculator extends AppCompatActivity {
 
     }
 
-
-
     /*private void goToCarSelection() {
         Intent intent = new Intent(MainActivity.this, CarSelection.class);
         startActivity(intent);
     }*/
-
-
-    private void fetchGasPrices(String stateCode) {
-        // The API endpoint (update with the correct URL from Collect API documentation)
-        String url = "https://api.collectapi.com/gasPrice/state/" + stateCode;
-
-        // Request headers (replace YOUR_API_KEY with your actual API key)
-        Map<String, String> headers = new HashMap<>();
-        headers.put("authorization", "apikey 0VVtJViutNWFE2XeLI5Vw7:145f2YcfMJMQyoykxswWrV");
-        headers.put("content-type", "application/json");
-
-        // Create a RequestQueue
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
-
-        // Create a JsonObjectRequest
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
-                Request.Method.GET,
-                url,
-                null,
-                response -> {
-                    try {
-                        // Parse the response (update based on the actual response structure)
-                        JSONObject result = response.getJSONObject("result");
-                        double gasPrice = result.getDouble("gasPrice"); // Example key
-
-                        // Update the GasPrice EditText
-                        GasPrice.setText(String.valueOf(gasPrice));
-
-                        Toast.makeText(this, "Gas price fetched: $" + gasPrice, Toast.LENGTH_SHORT).show();
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                        Toast.makeText(this, "Error parsing gas price data!", Toast.LENGTH_SHORT).show();
-                    }
-                },
-                error -> {
-                    // Handle errors
-                    error.printStackTrace();
-                    Toast.makeText(this, "Error fetching gas prices.", Toast.LENGTH_SHORT).show();
-                }
-        ) {
-            @Override
-            public Map<String, String> getHeaders() {
-                return headers;
-            }
-        };
-
-        // Add the request to the RequestQueue
-        requestQueue.add(jsonObjectRequest);
-    }
 }
