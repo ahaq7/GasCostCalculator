@@ -3,9 +3,9 @@ package com.pack.gascostcalculator;
 public class MyModel {
 
     String title, description, date;
-    int image;
+    int image, backgroundColor;
 
-    public MyModel(String title, String description, String date, int image) {
+    public MyModel(String title, String description, String date, int image, int backgroundColor) {
 
         this.title = title;
 
@@ -15,6 +15,16 @@ public class MyModel {
 
         this.image = image;
 
+        this.backgroundColor = backgroundColor;
+
+    }
+
+    public int getBackgroundColor() {
+        return backgroundColor;
+    }
+
+    public void setBackgroundColor(int backgroundColor) {
+        this.backgroundColor = backgroundColor;
     }
 
     public String getTitle() {

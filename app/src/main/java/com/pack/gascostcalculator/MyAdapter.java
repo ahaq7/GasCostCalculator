@@ -10,6 +10,7 @@ import android.widget.Toast;
 import androidx.annotation. NonNull;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.viewpager.widget.PagerAdapter;
 
 import java.util.ArrayList;
@@ -30,7 +31,6 @@ public class MyAdapter extends PagerAdapter {
         return modelArrayList.size();
     }
     @Override
-
     public boolean isViewFromObject(@NonNull View view, @NonNull Object object){
         return view.equals(object);
     }
@@ -38,10 +38,11 @@ public class MyAdapter extends PagerAdapter {
     @NonNull
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position){
-        View view = LayoutInflater. from(context).inflate(R.layout.card_item, container, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.card_item, container, false);
         //init uid views from card_item.xml
 
         ImageView bannerIv = view.findViewById(R.id.bannerIv);
+        CardView cardView = view.findViewById(R.id.cardView);
         TextView titleTv = view.findViewById(R.id.titleTv);
         TextView descriptionTv = view.findViewById(R.id.descriptionTv);
         TextView dateTv = view.findViewById(R.id.dateTv);
@@ -53,6 +54,7 @@ public class MyAdapter extends PagerAdapter {
         final String description = model.getDescription();
         final String date = model.getDate();
         int image = model.getImage();
+        int backgroundColor = model.getBackgroundColor();
 
 //set data
 
@@ -60,6 +62,7 @@ public class MyAdapter extends PagerAdapter {
         titleTv.setText(title);
         descriptionTv.setText(description);
         dateTv.setText(date);
+        cardView.setCardBackgroundColor(backgroundColor);
 
         view.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,7 +70,7 @@ public class MyAdapter extends PagerAdapter {
                 Toast.makeText(context, title + "/n" + description +"/n" + date, Toast.LENGTH_SHORT).show();
             }
         });
-
+        container.addView(view, position);
         return view;
     }
 

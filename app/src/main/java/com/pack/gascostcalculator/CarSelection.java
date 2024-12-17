@@ -58,23 +58,26 @@ public class CarSelection extends AppCompatActivity {
                 "Title 01",
                 "Description 02",
                 "03/08/2024",
-                R.drawable.subaru));
+                R.drawable.subaru,
+                R.drawable.bluebackground));
 
         modelArrayList.add(new MyModel(
                 "Title 02",
                 "Description 02",
                 "03/23/2024",
-                R.drawable.subaru));
+                R.drawable.dodgechalleger,
+                R.color.red));
 
         modelArrayList.add(new MyModel(
                 "Title 03",
                 "Description 03",
                 "03/23/202434",
-                R.drawable.subaru));
+                R.drawable.darkbluebackground,
+                R.drawable.white_background));
 
         myAdapter = new MyAdapter(this, modelArrayList);
         viewPager.setAdapter(myAdapter);
-        viewPager.setPadding(100,0,100,0);
+        viewPager.setPadding(0,0,0,0);
     }
 
 
