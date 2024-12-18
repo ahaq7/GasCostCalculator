@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
         linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                linearLayout.setBackgroundResource(R.color.subaruyellow);
+                linearLayout.setBackgroundResource(R.color.fBackground);
             }
         });
 
