@@ -12,6 +12,7 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,10 +32,6 @@ import org.json.JSONObject;
 import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.Map;
-
-import com.example.swipebutton_library.OnActiveListener;
-import com.example.swipebutton_library.SwipeButton;
-
 
 public class MainActivity extends AppCompatActivity {
 
@@ -64,6 +61,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, CarSelection.class);
                 startActivity(intent);
+            }
+        });
+
+        LinearLayout linearLayout = findViewById(R.id.linear_layout);
+        linearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                linearLayout.setBackgroundResource(R.color.subaruyellow);
             }
         });
 

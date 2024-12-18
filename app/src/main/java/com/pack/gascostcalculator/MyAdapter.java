@@ -4,6 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -42,7 +43,7 @@ public class MyAdapter extends PagerAdapter {
         //init uid views from card_item.xml
 
         ImageView bannerIv = view.findViewById(R.id.bannerIv);
-        CardView cardView = view.findViewById(R.id.cardView);
+        LinearLayout linearLayout = view.findViewById(R.id.linearlayout);
         TextView titleTv = view.findViewById(R.id.titleTv);
         TextView descriptionTv = view.findViewById(R.id.descriptionTv);
         TextView dateTv = view.findViewById(R.id.dateTv);
@@ -54,7 +55,7 @@ public class MyAdapter extends PagerAdapter {
         final String description = model.getDescription();
         final String date = model.getDate();
         int image = model.getImage();
-        int backgroundColor = model.getBackgroundColor();
+        final int backgroundColor = model.getBackgroundColor();
 
 //set data
 
@@ -62,7 +63,7 @@ public class MyAdapter extends PagerAdapter {
         titleTv.setText(title);
         descriptionTv.setText(description);
         dateTv.setText(date);
-        cardView.setCardBackgroundColor(backgroundColor);
+        linearLayout.setBackgroundColor(backgroundColor);
 
         view.setOnClickListener(new View.OnClickListener() {
             @Override
