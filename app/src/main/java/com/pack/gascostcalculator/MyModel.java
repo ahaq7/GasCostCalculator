@@ -1,22 +1,33 @@
 package com.pack.gascostcalculator;
 
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
+
 public class MyModel {
 
-    String title, description, date;
-    int image, backgroundColor;
+    String title, date;
+    int image, backgroundColor, milesPerGallon;
 
-    public MyModel(String title, String description, String date, int image, int backgroundColor) {
-
-        this.title = title;
-
-        this.description = description;
-
-        this.date = date;
+    public MyModel(int image, String title, int milesPerGallon, String date, int backgroundColor) {
 
         this.image = image;
 
+        this.title = title;
+
+        this.milesPerGallon = milesPerGallon;
+
+        this.date = date;
+
         this.backgroundColor = backgroundColor;
 
+    }
+
+    public int getMilesPerGallon() {
+        return milesPerGallon;
+    }
+
+    public void setMilesPerGallon(int milesPerGallon) {
+        this.milesPerGallon = milesPerGallon;
     }
 
     public int getBackgroundColor() {
@@ -33,14 +44,6 @@ public class MyModel {
 
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public String getDate() {
