@@ -1,5 +1,11 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="GreenText" parent="TextAppearance.AppCompat">
+    <style name="DodgeChallenger">
+        <item name="android:background">#0A0A0A</item>
+        <item name="android:backgroundTint">#0A0A0A</item>
+        <item name="android:progressBackgroundTint">#CFCFCF</item>
+        <item name="android:progressTint">#141414</item>
+        <item name="android:textColor">#FFFFFF</item>"
+
     </style>
 </resources>
