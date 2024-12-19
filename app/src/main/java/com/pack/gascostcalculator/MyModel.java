@@ -6,10 +6,10 @@ import android.graphics.drawable.Drawable;
 public class MyModel {
 
     String title, date;
-    int image, backgroundColor, milesPerGallon;
+    int image, milesPerGallon, topSpeed, acceleration;
     ColorSetter colorSetter;
 
-    public MyModel(int image, String title, int milesPerGallon, String date, int backgroundColor, ColorSetter colorSetter) {
+    public MyModel(int image, String date, String title, int milesPerGallon, int topSpeed, int acceleration, ColorSetter colorSetter) {
 
         this.image = image;
 
@@ -19,10 +19,28 @@ public class MyModel {
 
         this.date = date;
 
-        this.backgroundColor = backgroundColor;
-
         this.colorSetter = colorSetter;
 
+        this.acceleration = acceleration;
+
+        this.topSpeed = topSpeed;
+
+    }
+
+    public int getTopSpeed() {
+        return topSpeed;
+    }
+
+    public void setTopSpeed(int topSpeed) {
+        this.topSpeed = topSpeed;
+    }
+
+    public int getAcceleration() {
+        return acceleration;
+    }
+
+    public void setAcceleration(int acceleration) {
+        this.acceleration = acceleration;
     }
 
     public ColorSetter getColorSetter() {
@@ -39,14 +57,6 @@ public class MyModel {
 
     public void setMilesPerGallon(int milesPerGallon) {
         this.milesPerGallon = milesPerGallon;
-    }
-
-    public int getBackgroundColor() {
-        return backgroundColor;
-    }
-
-    public void setBackgroundColor(int backgroundColor) {
-        this.backgroundColor = backgroundColor;
     }
 
     public String getTitle() {

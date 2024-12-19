@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+        naviBarMarginsSet();
 
         Button calculatorBtn = findViewById(R.id.calculatebtn);
         calculatorBtn.setOnClickListener(new View.OnClickListener() {
@@ -73,6 +74,25 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    private void naviBarMarginsSet() {
+        View decorView = getWindow().getDecorView();
+
+        decorView.setOnApplyWindowInsetsListener(new View.OnApplyWindowInsetsListener(){
+            @NonNull
+            @Override
+            public WindowInsets onApplyWindowInsets(@NonNull View v, @NonNull WindowInsets insets) {
+                int left = insets.getSystemWindowInsetLeft();
+                int top = insets.getSystemWindowInsetTop();
+                int right = insets.getSystemWindowInsetRight();
+                int bottom = insets.getSystemWindowInsetBottom();
+
+                v.setPadding(left,top,right,bottom);
+
+                return insets.consumeSystemWindowInsets();
+            }
+        });
     }
 
 

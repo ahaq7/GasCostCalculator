@@ -1,8 +1,11 @@
 package com.pack.gascostcalculator;
 
 import android.os.Bundle;
+import android.view.View;
+import android.view.WindowInsets;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -14,7 +17,7 @@ import java.util.ArrayList;
 
 public class CarSelection extends AppCompatActivity {
 
-    private ActionBar actionBar;
+    //private ActionBar actionBar;
     ViewPager viewPager;
     private MyAdapter myAdapter;
     private ArrayList<MyModel> modelArrayList;
@@ -24,8 +27,9 @@ public class CarSelection extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_car_selection);
+        naviBarMarginsSet();
 
-        actionBar = getSupportActionBar();
+        //actionBar = getSupportActionBar();
 
         viewPager = findViewById(R.id.viewPager);
         loadCards();
@@ -33,8 +37,8 @@ public class CarSelection extends AppCompatActivity {
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-                String title = modelArrayList.get(position).getTitle();
-                actionBar.setTitle(title);
+                //String title = modelArrayList.get(position).getTitle();
+                //actionBar.setTitle(title);
             }
 
             @Override
@@ -59,47 +63,74 @@ public class CarSelection extends AppCompatActivity {
                 R.color.fBackground,
                 R.color.fProgressBar,
                 R.color.fProgress,
-                R.color.fText);
+                R.color.fText,
+                R.color.fButton,
+                R.color.fButtonText);
 
         ColorSetter colorSetterBlack = new ColorSetter(
                 R.color.BBackground,
                 R.color.BBackground,
                 R.color.BProgressBar,
                 R.color.BProgress,
-                R.color.BText);
+                R.color.BText,
+                R.color.BButton,
+                R.color.BButtonText);
 
 
         //ModelList
 
         modelArrayList = new ArrayList<>();
 
+
         modelArrayList.add(new MyModel(
                 R.drawable.dodgechalleger,
+                "2020",
                 "Dodge Challenger",
+                70,
                 20,
-                "03/08/2024",
-                R.color.red,
+                10,
                 colorSetterYellow));
 
         modelArrayList.add(new MyModel(
                 R.drawable.dodgechalleger,
+                "2015",
                 "Dodge Challenger",
-                79,
-                "03/08/2024",
-                R.color.black,
+                90,
+                10,
+                40,
                 colorSetterBlack));
 
         modelArrayList.add(new MyModel(
                 R.drawable.dodgechalleger,
+                "2020",
                 "Dodge Challenger",
+                50,
+                90,
                 100,
-                "03/08/2024",
-                R.color.red,
                 colorSetterYellow));
 
         myAdapter = new MyAdapter(this, modelArrayList);
         viewPager.setAdapter(myAdapter);
-        viewPager.setPadding(0,70,0,0);
+        viewPager.setPadding(0,0,0,0);
+    }
+
+    private void naviBarMarginsSet() {
+        View decorView = getWindow().getDecorView();
+
+        decorView.setOnApplyWindowInsetsListener(new View.OnApplyWindowInsetsListener(){
+            @NonNull
+            @Override
+            public WindowInsets onApplyWindowInsets(@NonNull View v, @NonNull WindowInsets insets) {
+                int left = insets.getSystemWindowInsetLeft();
+                int top = insets.getSystemWindowInsetTop();
+                int right = insets.getSystemWindowInsetRight();
+                int bottom = insets.getSystemWindowInsetBottom();
+
+                v.setPadding(left,top,right,bottom);
+
+                return insets.consumeSystemWindowInsets();
+            }
+        });
     }
 
 

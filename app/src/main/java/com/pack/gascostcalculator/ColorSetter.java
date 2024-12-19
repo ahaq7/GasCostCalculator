@@ -2,16 +2,38 @@ package com.pack.gascostcalculator;
 
 public class ColorSetter {
 
-    int background, backgroundTint, progressBackgroundTint, progressTint, textColor;
+    int background, backgroundTint, progressBackgroundTint, progressTint, textColor, buttonColor, buttonTextColor;
 
-    public ColorSetter(int background, int backgroundTint, int progressBackgroundTint, int progressTint, int textColor) {
+    public ColorSetter(int background, int backgroundTint, int progressBackgroundTint, int progressTint, int textColor, int buttonColor, int buttonTextColor) {
 
         this.background = background;
         this.backgroundTint = backgroundTint;
         this.progressBackgroundTint = progressBackgroundTint;
         this.progressTint = progressTint;
         this.textColor = textColor;
+        this.buttonColor = buttonColor;
+        this.buttonTextColor = buttonTextColor;
 
+    }
+
+    public void setTextColor(int textColor) {
+        this.textColor = textColor;
+    }
+
+    public int getButtonColor() {
+        return buttonColor;
+    }
+
+    public void setButtonColor(int buttonColor) {
+        this.buttonColor = buttonColor;
+    }
+
+    public int getButtonTextColor() {
+        return buttonTextColor;
+    }
+
+    public void setButtonTextColor(int buttonTextColor) {
+        this.buttonTextColor = buttonTextColor;
     }
 
     public int getBackground() {
