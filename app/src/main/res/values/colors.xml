@@ -6,15 +6,15 @@
     <color name="red">#B9052A</color>
 
     <color name="fBackground">#FEC700</color>
-    <color name="fProgressBar">#FEFBBF</color>
-    <color name="fProgress">#F6CB45</color>
+    <color name="fProgressBar">#FFC925</color>
+    <color name="fProgress">#FFFFFF</color>
     <color name="fButton">#000000</color>
     <color name="fText">#FFFFFF</color>
 
     <color name="BBackground">#0A0A0A</color>
-    <color name="BProgressBar">#CFCFCF</color>
-    <color name="BProgress">#141414</color>
-    <color name="BButton">#FFFFFF</color>
-    <color name="BText">#1B1B1B</color>
+    <color name="BProgressBar">#141414</color>
+    <color name="BProgress">#CFCFCF</color>
+    <color name="BButton">#414141</color>
+    <color name="BText">#F8F8F8</color>
 
 </resources>

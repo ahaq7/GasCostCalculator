@@ -7,8 +7,9 @@ public class MyModel {
 
     String title, date;
     int image, backgroundColor, milesPerGallon;
+    ColorSetter colorSetter;
 
-    public MyModel(int image, String title, int milesPerGallon, String date, int backgroundColor) {
+    public MyModel(int image, String title, int milesPerGallon, String date, int backgroundColor, ColorSetter colorSetter) {
 
         this.image = image;
 
@@ -20,6 +21,16 @@ public class MyModel {
 
         this.backgroundColor = backgroundColor;
 
+        this.colorSetter = colorSetter;
+
+    }
+
+    public ColorSetter getColorSetter() {
+        return colorSetter;
+    }
+
+    public void setColorSetter(ColorSetter colorSetter) {
+        this.colorSetter = colorSetter;
     }
 
     public int getMilesPerGallon() {

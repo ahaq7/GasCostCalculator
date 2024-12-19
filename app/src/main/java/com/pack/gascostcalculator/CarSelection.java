@@ -52,6 +52,25 @@ public class CarSelection extends AppCompatActivity {
 
     private void loadCards() {
 
+        //ColorList
+
+        ColorSetter colorSetterYellow = new ColorSetter(
+                R.color.fBackground,
+                R.color.fBackground,
+                R.color.fProgressBar,
+                R.color.fProgress,
+                R.color.fText);
+
+        ColorSetter colorSetterBlack = new ColorSetter(
+                R.color.BBackground,
+                R.color.BBackground,
+                R.color.BProgressBar,
+                R.color.BProgress,
+                R.color.BText);
+
+
+        //ModelList
+
         modelArrayList = new ArrayList<>();
 
         modelArrayList.add(new MyModel(
@@ -59,21 +78,24 @@ public class CarSelection extends AppCompatActivity {
                 "Dodge Challenger",
                 20,
                 "03/08/2024",
-                R.color.red));
+                R.color.red,
+                colorSetterYellow));
 
         modelArrayList.add(new MyModel(
                 R.drawable.dodgechalleger,
                 "Dodge Challenger",
                 79,
                 "03/08/2024",
-                R.color.black));
+                R.color.black,
+                colorSetterBlack));
 
         modelArrayList.add(new MyModel(
                 R.drawable.dodgechalleger,
                 "Dodge Challenger",
                 100,
                 "03/08/2024",
-                R.color.red));
+                R.color.red,
+                colorSetterYellow));
 
         myAdapter = new MyAdapter(this, modelArrayList);
         viewPager.setAdapter(myAdapter);

@@ -46,12 +46,20 @@ public class MyAdapter extends PagerAdapter {
         //init uid views from card_item.xml
 
         ImageView bannerIv = view.findViewById(R.id.bannerIv);
-        LinearLayout linearLayout = view.findViewById(R.id.linearlayout);
         ProgressBar progressBar1 = view.findViewById(R.id.progressBar1);
         TextView titleTv = view.findViewById(R.id.titleTv);
-        TextView dateTv = view.findViewById(R.id.dateTv);
 
-//get data
+
+
+        //setting colors:
+
+        LinearLayout linearLayout = view.findViewById(R.id.linearlayout);
+        TextView speedTv = view.findViewById(R.id.speedTv);
+        TextView MilesPerGallonTv = view.findViewById(R.id.MilesPerGallonTv);
+
+
+        ColorSetter colorSetter = modelArrayList.get(position).getColorSetter();
+
 
         MyModel model = modelArrayList.get(position);
         final String title = model.getTitle();
@@ -60,15 +68,34 @@ public class MyAdapter extends PagerAdapter {
         int image = model.getImage();
         int backgroundColorResId = model.getBackgroundColor();
 
-//set data
+        int backgroundColorTemp = colorSetter.getBackground();
+        int backgroundTintTemp = colorSetter.getBackgroundTint();
+        int progressBackgroundTintTemp = colorSetter.getProgressBackgroundTint();
+        int progressTintTemp = colorSetter.getProgressTint();
+        int textColorTemp = colorSetter.getTextColor();
 
+
+
+        //setting text color:
+        int textColor = ContextCompat.getColor(context, textColorTemp);
+        titleTv.setTextColor(textColor);
+        MilesPerGallonTv.setTextColor(textColor);
+        speedTv.setTextColor(textColor);
+
+        //setting background color:
+        int backgroundColor = ContextCompat.getColor(context, backgroundColorTemp);
+        linearLayout.setBackgroundColor(backgroundColor);
+
+        //setting progress bar colors:
+        progressBar1.setBackgroundTintList(ContextCompat.getColorStateList(context, backgroundColorTemp));
+        progressBar1.setProgressBackgroundTintList(ContextCompat.getColorStateList(context, progressBackgroundTintTemp));
+        progressBar1.setProgressTintList(ContextCompat.getColorStateList(context, progressTintTemp));
+
+        //setting image, title and progress percentage:
         bannerIv.setImageResource(image);
         titleTv.setText(title);
-        dateTv.setText(date);
         progressBar1.setProgress(milesPerGallon);
 
-        int backgroundColor = ContextCompat.getColor(context, backgroundColorResId);
-        linearLayout.setBackgroundColor(backgroundColor);
 
         view.setOnClickListener(new View.OnClickListener() {
             @Override

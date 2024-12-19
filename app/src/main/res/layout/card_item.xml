@@ -50,7 +50,7 @@
                 android:textSize="40sp" />
 
             <TextView
-                android:id="@+id/descriptionTv"
+                android:id="@+id/MilesPerGallonTv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="20dp"
@@ -78,7 +78,7 @@
                 android:progressTint="#040000" />
 
             <TextView
-                android:id="@+id/dateTv"
+                android:id="@+id/speedTv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="20dp"
