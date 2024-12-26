@@ -1,5 +1,6 @@
 package com.pack.gascostcalculator;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -132,13 +133,29 @@ public class MyAdapter extends PagerAdapter {
         progressBar3.setProgress(accelerationProgress);
 
 
+        /*
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(context, Calculator.class);
+                intent.putExtra("title", title);
+                intent.putExtra("MPG", milesPerGallon);
+                context.startActivity(intent);
+                Toast.makeText(context, title + "/n" +"/n" + date, Toast.LENGTH_SHORT).show();
+            }
+        });*/
+        selectCarBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, Calculator.class);
+                intent.putExtra("title", title);
+                intent.putExtra("MPG", milesPerGallon);
+                context.startActivity(intent);
                 Toast.makeText(context, title + "/n" +"/n" + date, Toast.LENGTH_SHORT).show();
             }
         });
-        container.addView(view, position);
+
+        container.addView(view);
         return view;
     }
 

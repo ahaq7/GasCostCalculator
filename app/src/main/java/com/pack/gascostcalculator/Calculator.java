@@ -44,11 +44,17 @@ public class Calculator extends AppCompatActivity {
         setContentView(R.layout.activity_calculator);
 
         naviBarMarginsSet();
+        int title = getIntent().getIntExtra("title", 0);
+        int MPGSelected = getIntent().getIntExtra("MPG", 0);
 
         MPG = findViewById(R.id.mPG);
         GasPrice = findViewById(R.id.gasPrice);
         MilesDriven = findViewById(R.id.milesDriven);
         answer = findViewById(R.id.answer);
+
+        MPG.setText(String.valueOf(MPGSelected));
+        GasPrice.setText("0");
+        MilesDriven.setText("0");
 
 
         ButtonCalculate();

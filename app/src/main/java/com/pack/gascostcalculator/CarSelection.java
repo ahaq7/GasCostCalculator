@@ -83,31 +83,60 @@ public class CarSelection extends AppCompatActivity {
 
 
         modelArrayList.add(new MyModel(
-                R.drawable.dodgechalleger,
-                "2020",
-                "Dodge Challenger",
-                70,
+                R.drawable.blacksubarubaja,
+                "2003",
+                "Black SUBARU",
                 20,
-                10,
-                colorSetterYellow));
-
-        modelArrayList.add(new MyModel(
-                R.drawable.dodgechalleger,
-                "2015",
-                "Dodge Challenger",
-                90,
-                10,
-                40,
+                70,
+                50,
                 colorSetterBlack));
 
         modelArrayList.add(new MyModel(
-                R.drawable.dodgechalleger,
-                "2020",
-                "Dodge Challenger",
+                R.drawable.subaruyellow,
+                "2003",
+                "Yellow Subaru",
+                20,
+                70,
                 50,
-                90,
-                100,
                 colorSetterYellow));
+
+        modelArrayList.add(new MyModel(
+                R.drawable.subaruyellow,
+                "2003",
+                "Yellow Subaru",
+                20,
+                70,
+                50,
+                colorSetterYellow));
+
+        modelArrayList.add(new MyModel(
+                R.drawable.subaruyellow,
+                "2003",
+                "Yellow Subaru",
+                20,
+                70,
+                50,
+                colorSetterYellow));
+
+        modelArrayList.add(new MyModel(
+                R.drawable.subaruyellow,
+                "2003",
+                "Yellow Subaru",
+                20,
+                70,
+                50,
+                colorSetterYellow));
+
+        modelArrayList.add(new MyModel(
+                R.drawable.mercedessprinter,
+                "2012",
+                "Mercedes Sprinter",
+                15,
+                60,
+                50,
+                colorSetterBlack));
+
+
 
         myAdapter = new MyAdapter(this, modelArrayList);
         viewPager.setAdapter(myAdapter);
