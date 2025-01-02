@@ -2,4 +2,21 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="grey">#F3F4F6</color>
+    <color name="red">#B9052A</color>
+
+    <color name="fBackground">#FEC700</color>
+    <color name="fProgressBar">#FFC925</color>
+    <color name="fProgress">#FFFFFF</color>
+    <color name="fText">#FFFFFF</color>
+    <color name="fButton">#000000</color>
+    <color name="fButtonText">#FFFFFF</color>
+
+    <color name="BBackground">#0A0A0A</color>
+    <color name="BProgressBar">#141414</color>
+    <color name="BProgress">#CFCFCF</color>
+    <color name="BText">#F8F8F8</color>
+    <color name="BButton">#FFFFFF</color>
+    <color name="BButtonText">#000000</color>
+
 </resources>

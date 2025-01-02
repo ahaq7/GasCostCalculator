@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center_vertical"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/linearlayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/carSelectionTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Car Selection"
+                android:textSize="30sp"
+                android:textColor="@color/black"
+                android:layout_gravity="center" />
+
+            <ImageView
+                android:id="@+id/bannerIv"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="40dp"
+                android:src="@drawable/subaruyellow"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date: 2003"
+                android:textColor="@color/black"
+                android:fontFamily="@font/carfont"
+                android:paddingLeft="20dp"
+                android:paddingTop="20dp"
+                android:letterSpacing=".09"/>
+
+            <TextView
+                android:id="@+id/titleTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingRight="20dp"
+                android:paddingLeft="20dp"
+
+                android:text="The Title"
+                android:fontFamily="@font/carfont"
+                android:textColor="@color/black"
+                android:textSize="40sp"/>
+
+            <TextView
+                android:id="@+id/MilesPerGallonTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:ellipsize="end"
+                android:textAllCaps="false"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/carfont"
+                android:layout_marginLeft="8dp"
+                android:text="Miles Per Gallon"/>
+
+            <ProgressBar
+                android:id="@+id/progressBar1"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="27dp"
+                android:layout_marginRight="27dp"
+                android:background="#000000"
+                android:backgroundTint="#000000"
+                android:backgroundTintMode="src_atop"
+                android:progress="10"
+                android:progressBackgroundTint="#FF0000"
+                android:progressBackgroundTintMode="screen"
+                android:progressTint="#040000" />
+
+            <TextView
+                android:id="@+id/speedTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:ellipsize="end"
+                android:textAllCaps="false"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/carfont"
+                android:layout_marginLeft="8dp"
+                android:text="Top Speed"/>
+
+            <ProgressBar
+                android:id="@+id/progressBar2"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="27dp"
+                android:layout_marginRight="27dp"
+                android:background="#000000"
+                android:backgroundTint="#000000"
+                android:backgroundTintMode="src_atop"
+                android:progress="10"
+                android:progressBackgroundTint="#FF0000"
+                android:progressBackgroundTintMode="screen"
+                android:progressTint="#040000" />
+
+            <TextView
+                android:id="@+id/acceleration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:ellipsize="end"
+                android:textAllCaps="false"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/carfont"
+                android:layout_marginLeft="8dp"
+                android:text="acceleration"/>
+
+            <ProgressBar
+                android:id="@+id/progressBar3"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="27dp"
+                android:layout_marginRight="27dp"
+                android:background="#000000"
+                android:backgroundTint="#000000"
+                android:backgroundTintMode="src_atop"
+                android:progress="10"
+                android:progressBackgroundTint="#FF0000"
+                android:progressBackgroundTintMode="screen"
+                android:progressTint="#040000" />
+
+            <Button
+                android:id="@+id/selectCarBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:shadowRadius="20"
+                android:layout_margin="25dp"
+                android:text="Select Car"
+                android:textSize="25dp"
+                android:fontFamily="@font/neonfont"/>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
